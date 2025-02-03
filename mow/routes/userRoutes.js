@@ -34,7 +34,7 @@ router.get('/users/:id', authenticate, async (req, res) => {
             select: { id: true, firstName: true, lastName: true, email: true}
         });
         if (!user) {
-            return res,status(404).json({ error: 'User not found...'})
+            return res.status(404).json({ error: 'User not found...'})
         }
         res.json(user);
     } catch(error) {
